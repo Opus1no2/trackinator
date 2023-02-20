@@ -29,8 +29,5 @@ EXPOSE 3000
 # ENV RAILS_ENV=development
 # ENV RAILS_SERVE_STATIC_FILES=true
 
-# Run the database migrations
-RUN bundle exec rake db:migrate
-
 # Start the Rails server
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
