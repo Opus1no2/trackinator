@@ -1,1 +1,8 @@
-.header-row
+%header
+  .header-highlight
+  .container
+    .row.align-right
+      - unless current_user.present?
+        = link_to "Login", user_session_path
+      - if current_user.present?
+        = button_to "Log out", destroy_user_session_path, method: :delete, class: ["btn-link"]

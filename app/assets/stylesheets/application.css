@@ -31,9 +31,3 @@ footer {
    flex-shrink: 0;
    margin-bottom: 10px;
 }
-
-.header-row {
-   height: 10px;
-   background: linear-gradient(to right, var(--primary) 0%, #6653c2 100%);
-   margin-bottom: 55px;
-}

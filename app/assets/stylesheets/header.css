@@ -1,0 +1,31 @@
+header {
+   height: 70px;
+   padding-bottom: 20px;
+}
+
+header > .container > .row > form {
+   display: none;
+}
+
+@media(min-width: 640px) {
+   header {
+      height: auto;
+   }
+   header > .container > .row > form {
+      display: block;
+   }
+}
+header > .container {
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+
+.logout-btn:hover {
+  color: var(--primary);
+  background: transparent
+}
+
+.header-highlight {
+   height: 10px;
+   background: linear-gradient(to right, var(--primary) 0%, #6653c2 100%);
+}
