@@ -1,11 +1,9 @@
-.container.content
-  .row
-    %h1 Welcome to Trackinator
-  .row
-    %p This is a productivity application that, as of now, allows you to create lists to help stay organized. Feel free to sign up and try it out for yourself.
-  .row.center-xs
-    .col-xs-2
-      .box
-        %button Sign Up
+.container.content.text-center
+  .text-center
+    %h1 Welcome to <span class="text-highlight">Trackinator</span>
+  .text-center.mb-2
+    %h3 Trackinator is a productivity application that, as of now, allows you to create lists to help stay organized. Feel free to sign up and try it out for yourself.
+  .text-center
+    = link_to "SIGN UP", new_user_registration_path, class: ["button", "sign-up-btn"]
 
 = render 'shared/footer'

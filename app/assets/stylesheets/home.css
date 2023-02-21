@@ -1,0 +1,25 @@
+.content {
+   flex: 1 0 auto;
+}
+
+.sign-up-btn {
+  display: inline-block;
+  color: white;
+  background: linear-gradient(to right, #90c1ea 0%, #55c579 100%);
+  width: 250px;
+  padding: 1em;
+  border-radius: 25px;
+  border: solid var(--dark-bg-color) 1px;
+  font-size: 1.4rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  padding: 0 2rem;
+}
+
+.sign-up-btn:visited {
+  color: white;
+}
+
+.text-highlight {
+  color: #a979f8;
+}
