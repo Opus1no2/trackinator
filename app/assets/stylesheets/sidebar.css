@@ -1,0 +1,6 @@
+.nav-bar {
+  width: 250px;
+  padding-left: 2rem;
+  padding-top: var(--header-height);
+  background: #242729;
+}

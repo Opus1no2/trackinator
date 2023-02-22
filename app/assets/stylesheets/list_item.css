@@ -36,5 +36,11 @@
 
 .list-item-input {
   max-width: 112rem;
-  margin-bottom: 20px;
+  background: var(--dark-bg-color);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.list-item-input > form > input {
+  margin: 0 !important;
 }

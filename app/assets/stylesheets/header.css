@@ -29,3 +29,8 @@ header > .container {
    height: 10px;
    background: linear-gradient(to right, var(--primary) 0%, #6653c2 100%);
 }
+
+.header-nav {
+   background: var(--dark-bg-color);
+   height: var(--header-height);
+}
