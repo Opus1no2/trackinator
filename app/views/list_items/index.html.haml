@@ -1,4 +1,7 @@
-.container.h-100.flex.flex-column
+.container.h-100.flex.flex-column{ "data-controller" => "item" }
+  .flex.flex-column.hide.text-center{"data-id" => "finished-state" }
+    %h2.text-highlight Congratulations!
+    %p You finished this list. Doesn't it feel good?
   - @list_items.each do |item|
     - if item.completed_at.nil?
       .list-item-row
@@ -11,4 +14,4 @@
     = button_to "New Item", {action: :create}, class: ["mobile", "full"]
   .list-item-input.fixed.bottom.screen.full.mx-auto
     = form_with data: { turbo: false } do |f|
-      = f.text_field :description, { id: "list-item-input", placeholder: "Type your next item", class: "full" }
+      = f.text_field :description, { id: "description", name: "description", placeholder: "Type your next item", class: "full" }

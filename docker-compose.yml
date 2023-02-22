@@ -11,6 +11,8 @@ services:
     depends_on:
       - track_db
     command: bundle exec rails s -b 0.0.0.0
+    tty: true
+    stdin_open: true
   track_db:
     image: postgres:14
     ports:

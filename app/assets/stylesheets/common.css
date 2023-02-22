@@ -110,3 +110,7 @@ input[type='color'], input[type='date'], input[type='datetime'], input[type='dat
 .mx-auto {
   margin: 0 auto;
 }
+
+.hide {
+  display: none;
+}

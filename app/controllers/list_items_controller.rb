@@ -11,9 +11,7 @@ class ListItemsController < ApplicationController
   end
 
   def update
-    completed_at = params[:completed_at].present? ? DateTime.current : nil
-    update_params = {completed_at: completed_at}
-    update_params.merge(description: params[:description]) if params[:description].present?
+    update_params = ListUpdateService.call(params)
 
     list_items.find(params[:id]).update(update_params)
     redirect_to list_list_items_path
