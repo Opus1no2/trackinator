@@ -1,5 +1,5 @@
 .content {
-   flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .sign-up-btn {
@@ -14,10 +14,10 @@
   height: 4.5rem;
   line-height: 4.5rem;
   padding: 0 2rem;
-}
 
-.sign-up-btn:visited {
-  color: white;
+  &:visited {
+    color: white;
+  }
 }
 
 .text-highlight {

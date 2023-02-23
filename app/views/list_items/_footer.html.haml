@@ -1,0 +1,5 @@
+.sticky.bottom.bg-dark.pt-10
+  = button_to "New Item", {action: :create}, class: ["mobile", "full"]
+.list-item-input.sticky.bottom.full.mx-auto
+  = form_with data: { turbo: false } do |f|
+    = f.text_field :description, { id: "description", name: "description", placeholder: "Type your next item", class: "full" }

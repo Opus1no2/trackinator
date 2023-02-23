@@ -1,28 +1,32 @@
 header {
    height: 70px;
    padding-bottom: 20px;
-}
 
-header > .container > .row > form {
-   display: none;
+   form {
+      display: none;
+   }
+
+   &.container {
+      padding-top: 10px;
+      padding-bottom: 10px;
+   }
 }
 
 @media(min-width: 640px) {
    header {
       height: auto;
+
+      form {
+         display: block;
+      }
    }
-   header > .container > .row > form {
-      display: block;
-   }
-}
-header > .container {
-   padding-top: 10px;
-   padding-bottom: 10px;
 }
 
-.logout-btn:hover {
-  color: var(--primary);
-  background: transparent
+.logout-btn {
+   &:hover {
+      color: var(--primary);
+      background: transparent;
+   }
 }
 
 .header-highlight {

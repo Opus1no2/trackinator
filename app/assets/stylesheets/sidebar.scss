@@ -1,0 +1,16 @@
+.side-bar {
+  width: 250px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: var(--header-height);
+  background: #242729;
+}
+
+.new-list-btn {
+  border-top: solid 1px var(--secondary);
+
+  button {
+    background: transparent;
+    border: none;
+  }
+}

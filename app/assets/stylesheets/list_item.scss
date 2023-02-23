@@ -39,8 +39,19 @@
   background: var(--dark-bg-color);
   padding-top: 20px;
   padding-bottom: 20px;
+  display: none;
 }
 
-.list-item-input > form > input {
-  margin: 0 !important;
+@media(min-width: 640px) {
+  .list-item-input {
+    display: block;
+  }
+}
+
+.list-item-input {
+  form {
+    input {
+      margin: 0 !important;
+    }
+  }
 }

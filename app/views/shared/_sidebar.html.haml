@@ -1,4 +1,6 @@
-%nav.nav-bar.screen.flex.flex-column.sticky.top.bottom
-  %div foo
-  %div foo
-  %div foo
+%nav.side-bar.screen.flex.flex-column.sticky.top.bottom
+  - lists.each do |list|
+    = link_to list.title, list_list_items_path(list.id), class: "mb-2"
+  .sticky.new-list-btn
+    %button.btn-link{ "data-controller" => "modal", "data-action" => "click->modal#toggle" } New List
+

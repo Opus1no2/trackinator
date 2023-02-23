@@ -1,12 +1,10 @@
 .header-highlight
-.flex.h-100.overflow-scroll
-  = render "shared/sidebar"
+.flex.h-100.overflow-scroll{styles: "z-index: -1;"}
+  = render partial:  "shared/sidebar", locals: { lists: @view.lists }
   .container.h-100.flex.flex-column{ "data-controller" => "item" }
     = render "header-nav"
-    .flex.flex-column.hide.text-center{"data-id" => "finished-state" }
-      %h2.text-highlight Congratulations!
-      %p You finished this list. Doesn't it feel good?
-    - @list_items.each do |item|
+    = render "finished_state"
+    - @view.list_items.each do |item|
       - if item.completed_at.nil?
         .list-item-row
           = form_with url: list_list_item_path(id: item.id), method: :put, html: { class: ["full", "mb-0"] } do |f|
@@ -14,8 +12,5 @@
           = form_with url: list_list_item_path(id: item.id), method: :put, html: { class: ["complete-form"] } do |f|
             = f.hidden_field :completed_at, value: true
             = f.submit "", class: ["complete-btn", item.completed_at.present? ? "completed" : ""]
-    .sticky.bottom.bg-dark.pt-10
-      = button_to "New Item", {action: :create}, class: ["mobile", "full"]
-    .list-item-input.fixed.bottom.screen.full.mx-auto
-      = form_with data: { turbo: false } do |f|
-        = f.text_field :description, { id: "description", name: "description", placeholder: "Type your next item", class: "full" }
+    = render "footer"
+= render "shared/new_modal"
