@@ -1,7 +1,7 @@
 %header
   .header-highlight
   .container
-    .row.align-right
+    .row.justify-end
       - unless current_user.present?
         = link_to "Login", user_session_path
       - if current_user.present?

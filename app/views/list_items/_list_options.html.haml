@@ -3,4 +3,5 @@
   .dropdown-content
     %a{:href => "#"} Show Completed
     %a.delete-list-link{:href => "#"} Delete List
-    %a.log-out-link{:href => "#"} Log Out
+    = button_to "Log Out", destroy_user_session_path, method: :delete, class: ["btn-link", "log-out-link"]
+    //%a.log-out-link{:href => "#"} Log Out

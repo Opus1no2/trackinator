@@ -76,19 +76,20 @@ select {
   justify-content: end;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
 .align-center {
   align-items: center;
 }
+
 .flex {
   display: flex;
 }
 
 .flex-column {
   flex-direction: column;
-}
-
-.space-between {
-  justify-content: space-between;
 }
 
 .mobile {
@@ -143,6 +144,10 @@ select {
 
 .pt-10 {
   padding-top: 10px;
+}
+
+.pt-50 {
+  padding-top: 50px;
 }
 
 .h-5 {
