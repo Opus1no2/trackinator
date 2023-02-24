@@ -4,13 +4,14 @@
   .container.h-100.flex.flex-column{ "data-controller" => "item" }
     = render "header-nav"
     = render "finished_state"
-    - @view.list_items.each do |item|
-      - if item.completed_at.nil?
-        .list-item-row
-          = form_with url: list_list_item_path(id: item.id), method: :put, html: { class: ["full", "mb-0"] } do |f|
-            = f.text_field :description, { value: item.description, class: "list-item" }
-          = form_with url: list_list_item_path(id: item.id), method: :put, html: { class: ["complete-form"] } do |f|
-            = f.hidden_field :completed_at, value: true
-            = f.submit "", class: ["complete-btn", item.completed_at.present? ? "completed" : ""]
+    .flex.flex-column.h-100
+      - @view.list_items.each do |item|
+        - if item.completed_at.nil?
+          .list-item-row
+            = form_with url: list_list_item_path(id: item.id), method: :put, html: { class: ["full", "mb-0"] } do |f|
+              = f.text_field :description, { value: item.description, class: "list-item" }
+            = form_with url: list_list_item_path(id: item.id), method: :put, html: { class: ["complete-form"] } do |f|
+              = f.hidden_field :completed_at, value: true
+              = f.submit "", class: ["complete-btn", item.completed_at.present? ? "completed" : ""]
     = render "footer"
 = render "shared/new_modal"

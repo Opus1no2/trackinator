@@ -1,0 +1,6 @@
+.dropdown
+  .options.dropdown-btn{"data-controller" => "list-options", "data-action" => "click->list-options#toggle"} ◯ ◯ ◯
+  .dropdown-content
+    %a{:href => "#"} Show Completed
+    %a.delete-list-link{:href => "#"} Delete List
+    %a.log-out-link{:href => "#"} Log Out

@@ -1,2 +1,3 @@
-.header-nav.flex.align-right.sticky.top
-  = button_to "Log out", destroy_user_session_path, method: :delete, class: ["btn-link", "m-0", "h-5"]
+.header-nav.flex.justify-end.align-center.sticky.top
+  = render "list_options"
+  // = button_to "Log out", destroy_user_session_path, method: :delete, class: ["btn-link", "m-0", "h-5"]

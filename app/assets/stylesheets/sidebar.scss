@@ -4,13 +4,32 @@
   padding-right: 2rem;
   padding-top: var(--header-height);
   background: #242729;
+
+  a {
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 2px;
+  }
+
+  a:hover {
+    background: #363636;
+  }
 }
 
 .new-list-btn {
   border-top: solid 1px var(--secondary);
+  margin-top: 5px;
 
   button {
+    margin-top: 5px;
     background: transparent;
     border: none;
+    padding: 8px;
+    width: 100%;
+    text-align: left;
+  }
+
+  button:hover {
+    background: #363636;
   }
 }

@@ -72,10 +72,13 @@ select {
   width: 100%;
 }
 
-.align-right {
+.justify-end {
   justify-content: end;
 }
 
+.align-center {
+  align-items: center;
+}
 .flex {
   display: flex;
 }

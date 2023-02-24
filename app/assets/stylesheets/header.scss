@@ -35,6 +35,18 @@ header {
 }
 
 .header-nav {
+   padding-top: 10px;
+   padding-bottom: 10px;
    background: var(--dark-bg-color);
    height: var(--header-height);
+
+   .options {
+      margin-right: 5px;
+      font-size: 6px;
+      font-weight: bold;
+
+      &:hover {
+         cursor: pointer;
+      }
+   }
 }

@@ -2,7 +2,7 @@
 #modal.modal.hide
   .close-modal{ "data-controller" => "modal", "data-action" => "click->modal#toggle" }
   %h3 Add List
-  = form_with(model: List.new) do |f|
+  = form_with(id: 'new-list-form', model: List.new) do |f|
     = f.label "List Title"
     = f.text_field :title
     = f.submit
