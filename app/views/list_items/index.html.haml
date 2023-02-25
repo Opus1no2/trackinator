@@ -1,5 +1,5 @@
 .header-highlight
-.flex.h-100.overflow-scroll
+.flex.h-100.overflow-y-scroll
   = render partial:  "shared/sidebar", locals: { lists: @view.lists }
   .container.flex.flex-column{ "data-controller" => "item", "data-action" => "resize@window->item#layout" }
     = render partial: "header-nav", locals: { settings: @view.list_settings }
