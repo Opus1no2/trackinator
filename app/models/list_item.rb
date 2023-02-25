@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ListItem < ApplicationRecord
   belongs_to :list
 
@@ -8,6 +10,6 @@ class ListItem < ApplicationRecord
   scope :in_progress, -> { where(completed_at: nil).most_recent_first }
 
   def default_description
-    self.description ||= "You new list item"
+    self.description ||= 'You new list item'
   end
 end

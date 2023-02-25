@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateListViewSettings < ActiveRecord::Migration[7.0]
   def change
     create_table :list_view_settings do |t|

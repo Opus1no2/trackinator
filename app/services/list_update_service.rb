@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ListUpdateService
   attr_reader :params
 
@@ -10,7 +12,7 @@ class ListUpdateService
   end
 
   def call
-    items = { completed_at: completed_at }
+    items = { completed_at: }
     items.merge!(description: params[:description]) if description?
     items
   end

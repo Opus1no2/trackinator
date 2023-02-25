@@ -6,6 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.2'
 
 gem 'devise'
+gem 'haml-rails', '~> 2.0'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg', '~> 1.1'
@@ -14,7 +15,6 @@ gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
-gem 'haml-rails', '~> 2.0'
 
 # gem "redis", "~> 4.0"
 # gem "kredis"
@@ -25,7 +25,7 @@ gem 'bootsnap', require: false
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Use Sass to process CSS
-gem "sassc-rails"
+gem 'sassc-rails'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -36,9 +36,9 @@ group :development, :test do
 end
 
 group :development do
+  gem 'html2haml'
   gem 'rubocop'
   gem 'web-console'
-  gem 'html2haml'
   # gem "rack-mini-profiler"
   # gem "spring"
 end

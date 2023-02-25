@@ -1,7 +1,7 @@
+# frozen_string_literal: true
+
 class ListViewFacade
-  attr_reader :current_user, :lists,
-    :current_list, :list_items, :params,
-    :list_settings
+  attr_reader :current_user, :params
 
   def initialize(current_user, params)
     @params = params
@@ -11,7 +11,7 @@ class ListViewFacade
   def lists
     @lists = current_user.lists.map do |list|
       {
-        list: list,
+        list:,
         item_count: list_items(list).count
       }
     end
