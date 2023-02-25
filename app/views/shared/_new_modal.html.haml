@@ -1,8 +1,8 @@
-#modal-background.modal-background.hide{ "data-controller" => "modal", "data-action" => "click->modal#toggle" }
-#modal.modal.hide
+#modal-background.modal-background.hidden{ "data-controller" => "modal", "data-action" => "click->modal#toggle" }
+#modal.modal.hidden.p-5.bg-secondary-dark.rounded.text-white
   .close-modal{ "data-controller" => "modal", "data-action" => "click->modal#toggle" }
-  %h3 Add List
-  = form_with(id: 'new-list-form', model: List.new) do |f|
-    = f.label "List Title"
-    = f.text_field :title
-    = f.submit
+  %h1.mb-1.text-2xl Add List
+  = form_with id: 'new-list-form', model: List.new, class: "flex flex-col" do |f|
+    = f.label "List Title", class: "block mb-2"
+    = f.text_field :title, class: "mb-2 bg-transparent border rounded focus:border-secondary"
+    = f.submit class: "py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer bg-secondary"

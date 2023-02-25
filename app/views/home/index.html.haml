@@ -1,10 +1,11 @@
 = render 'shared/header'
-.container.content.text-center
-  .text-center
-    %h1 Welcome to <span class="text-highlight">Trackinator</span>
+.container.mx-auto.content.text-center
+  .text-center.mb-5
+    .text-4xl.font-light.tracking-tight Welcome to <span class="text-highlight">Trackinator</span>
+  .text-center.mb-10
+    .text-xl Trackinator is a productivity application that, as of now, allows you to create lists to help stay organized.
+    .text-xl Feel free to sign up and try it out for yourself.
   .text-center.mb-2
-    %h3 Trackinator is a productivity application that, as of now, allows you to create lists to help stay organized. Feel free to sign up and try it out for yourself.
-  .text-center
-    = link_to "SIGN UP", new_user_registration_path, class: ["button", "sign-up-btn"]
+    = link_to "SIGN UP", new_user_registration_path, class: "bg-gradient-to-r from-light-blue to-light-green px-10 py-3 text-white rounded font-medium"
 
 = render 'shared/footer'

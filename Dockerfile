@@ -25,9 +25,8 @@ COPY . .
 # Expose port 3000 for the Rails server
 EXPOSE 3000
 
-# Set environment variables
-# ENV RAILS_ENV=development
 # ENV RAILS_SERVE_STATIC_FILES=true
 
 # Start the Rails server
-CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
+# CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
+CMD ["bin/dev"]

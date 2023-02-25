@@ -7,7 +7,7 @@ export default class extends Controller {
     });
   }
   toggle() {
-    document.getElementById('modal-background').classList.toggle('hide');
-    document.getElementById('modal').classList.toggle('hide');
+    document.getElementById('modal-background').classList.toggle('hidden');
+    document.getElementById('modal').classList.toggle('hidden');
   }
 }

@@ -10,7 +10,6 @@
   padding: 1em;
   border-radius: 25px;
   border: solid var(--dark-bg-color) 1px;
-  font-size: 1.4rem;
   height: 4.5rem;
   line-height: 4.5rem;
   padding: 0 2rem;
@@ -18,8 +17,4 @@
   &:visited {
     color: white;
   }
-}
-
-.text-highlight {
-  color: #a979f8;
 }
