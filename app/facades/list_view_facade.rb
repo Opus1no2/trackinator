@@ -1,6 +1,7 @@
 class ListViewFacade
   attr_reader :current_user, :lists,
-    :current_list, :list_items, :params
+    :current_list, :list_items, :params,
+    :list_settings
 
   def initialize(current_user, params)
     @params = params
@@ -11,16 +12,24 @@ class ListViewFacade
     @lists = current_user.lists.map do |list|
       {
         list: list,
-        item_count: list.list_items.count
+        item_count: list_items(list).count
       }
     end
   end
 
   def current_list
-    current_user.lists.find(params[:list_id])
+    @current_list = current_user.lists.find(params[:list_id])
   end
 
-  def list_items
-    @list_items = current_list.list_items.order(created_at: :desc)
+  def list_settings
+    @list_settings = current_list.list_view_settings.first.id
+  end
+
+  def list_items(list = current_list)
+    @list_items = if list.list_view_settings.first.show_complete
+                    list.list_items.most_recent_first
+                  else
+                    list.list_items.in_progress
+                  end
   end
 end

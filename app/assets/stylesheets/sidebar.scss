@@ -5,6 +5,10 @@
   padding-top: var(--header-height);
   background: #242729;
 
+  .active {
+    background: #363636;
+  }
+
   a {
     color: white;
     padding: 8px;

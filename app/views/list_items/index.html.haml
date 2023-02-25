@@ -1,10 +1,10 @@
 .header-highlight
 .flex.h-100.overflow-scroll
   = render partial:  "shared/sidebar", locals: { lists: @view.lists }
-  .container.h-100.flex.flex-column{ "data-controller" => "item" }
-    = render "header-nav"
+  .container.flex.flex-column{ "data-controller" => "item", "data-action" => "resize@window->item#layout" }
+    = render partial: "header-nav", locals: { settings: @view.list_settings }
     = render "finished_state"
-    .flex.flex-column.h-100
+    .flex.flex-column{ "data-id" => "list-items-cont" }
       = render partial: "list_items", collection: @view.list_items, as: :item
     = render "footer"
 = render "shared/new_modal"

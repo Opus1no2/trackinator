@@ -8,4 +8,9 @@ export default class extends Controller {
       this.element.querySelector('[data-id="finished-state"]').classList.toggle('hide');
     }
   }
+  layout() {
+    const container = document.querySelector('[data-id="list-items-cont"]');
+    const newItemInput = document.querySelector('[data-id="list-item-input"]');
+    newItemInput.style.width = `${container.clientWidth}px`;
+  }
 }

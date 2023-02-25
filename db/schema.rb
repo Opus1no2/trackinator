@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_21_033705) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_25_001111) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_21_033705) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["list_id"], name: "index_list_items_on_list_id"
+  end
+
+  create_table "list_view_settings", force: :cascade do |t|
+    t.bigint "list_id"
+    t.boolean "show_complete", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_list_view_settings_on_list_id"
   end
 
   create_table "lists", force: :cascade do |t|

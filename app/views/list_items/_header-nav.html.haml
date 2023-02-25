@@ -1,3 +1,2 @@
 .header-nav.flex.justify-end.align-center.sticky.top
-  = render "list_options"
-  // = button_to "Log out", destroy_user_session_path, method: :delete, class: ["btn-link", "m-0", "h-5"]
+  = render partial: "list_options", locals: { settings: settings }

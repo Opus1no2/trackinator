@@ -1,7 +1,6 @@
 .dropdown
   .options.dropdown-btn{"data-controller" => "list-options", "data-action" => "click->list-options#toggle"} ◯ ◯ ◯
   .dropdown-content
-    %a{:href => "#"} Show Completed
+    = button_to "Show Completed", list_list_view_setting_path(list_id: params[:list_id], id: settings), method: :put, class: ["btn-link"]
     = button_to "Delete List", list_path(params[:list_id]), method: :delete, class: ["btn-link", "delete-list-link"]
     = button_to "Log Out", destroy_user_session_path, method: :delete, class: ["btn-link", "log-out-link"]
-    //%a.log-out-link{:href => "#"} Log Out

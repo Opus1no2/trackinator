@@ -1,6 +1,6 @@
 %nav.side-bar.screen.flex.flex-column.sticky.top.bottom
   - lists.each do |list|
-    = link_to list_list_items_path(list[:list].id), class: "mb-2 flex space-between align-center" do
+    = link_to list_list_items_path(list[:list].id), class: list_classes(list[:list].id, params[:list_id]) do
       .flex
         = list[:list].title
       .flex
