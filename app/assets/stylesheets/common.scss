@@ -1,5 +1,8 @@
+h1, h2, h3, h4, h5, h6, label { font-weight: 200; }
+input, button { font-weight: 400; }
+
 a {
-  font-weight: 400;
+  font-weight: 200;
   color: var(--primary);
 
   &:visited {
@@ -168,4 +171,8 @@ select {
 
 .bg-dark {
   background: var(--dark-bg-color);
+}
+
+.flex-1 {
+  flex: 1;
 }

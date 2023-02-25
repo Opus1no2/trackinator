@@ -8,11 +8,16 @@ class ListViewFacade
   end
 
   def lists
-    @lists = current_user.lists
+    @lists = current_user.lists.map do |list|
+      {
+        list: list,
+        item_count: list.list_items.count
+      }
+    end
   end
 
   def current_list
-    lists.find(params[:list_id])
+    current_user.lists.find(params[:list_id])
   end
 
   def list_items
