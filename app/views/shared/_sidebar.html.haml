@@ -1,4 +1,4 @@
-%nav.side-bar.screen.flex.flex-col.sticky.top-0.bottom-0
+%nav.side-bar.px-4.pt-11.bg-lighter-dark.screen.w-64.hidden.md:flex.flex-col.sticky.top-0.bottom-0
   - lists.each do |list|
     = link_to list_list_items_path(list[:list].id), class: list_classes(list[:list].id, params[:list_id]) do
       .flex
@@ -6,5 +6,4 @@
       .flex
         = list[:item_count]
   .sticky.new-list-btn
-    %button.btn-link{ "data-controller" => "modal", "data-action" => "click->modal#toggle" } New List
-
+    %button.btn-link.rounded.hover:bg-hover-dark{ "data-controller" => "modal", "data-action" => "click->modal#toggle" } New List

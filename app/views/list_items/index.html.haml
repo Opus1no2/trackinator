@@ -1,7 +1,7 @@
 .header-highlight
 .flex.h-screen.overflow-y-scroll
   = render partial:  "shared/sidebar", locals: { lists: @view.lists }
-  .container.mx-auto.flex.flex-col{ "data-controller" => "item", "data-action" => "resize@window->item#layout" }
+  .container.px-2.mx-auto.flex.flex-col{ class: "w-full md:w-2/3", "data-controller" => "item", "data-action" => "resize@window->item#layout" }
     = render partial: "header-nav", locals: { settings: @view.list_settings }
     = render "finished_state"
     .flex.flex-col{ "data-id" => "list-items-cont" }

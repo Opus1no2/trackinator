@@ -18,6 +18,8 @@ module.exports = {
         'transparent': 'transparent',
         'secondary': '#a979f8',
         'secondary-dark': '#161920',
+        'lighter-dark': '#242729',
+        'hover-dark': '#363636',
         'light-blue': '#90c1ea',
         'light-green': '#55c579',
       },

@@ -1,5 +1,5 @@
 .sticky.bottom-0
-  = button_to "New Item", {action: :create}, class: ["mobile", "w-full"]
+  = button_to "New Item", {action: :create}, class: "mobile w-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded py-2"
 .list-item-input.bottom-0.w-full{ "data-id" => "list-item-input" }
   = form_with data: { turbo: false } do |f|
     = f.text_field :description, { id: "description", name: "description", placeholder: "Type your next item", class: "w-full bg-dark focus:border-secondary rounded" }

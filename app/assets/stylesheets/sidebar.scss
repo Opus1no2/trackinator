@@ -1,25 +1,6 @@
 .side-bar {
-  width: 250px;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: var(--header-height);
-  background: #242729;
-
   .active {
-    background: #363636;
-  }
-
-  a {
-    color: white;
-    padding: 8px;
-    border-radius: 5px;
-    margin-bottom: 2px;
-    font-weight: 200;
-  }
-
-  a:hover {
-    color: white;
-    background: #363636;
+    background: #242729;
   }
 }
 
