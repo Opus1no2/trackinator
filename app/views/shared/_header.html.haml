@@ -1,8 +1,9 @@
-%header
+%header.mb-10
   .header-highlight
   .container.mx-auto
-    .row.justify-end
+    .flex.row.justify-end.py-4
       - unless current_user.present?
-        = link_to "Login", user_session_path
+        = link_to "Login", user_session_path, class: "ml-4"
+        = link_to "Register", new_user_registration_path, class: "ml-4"
       - if current_user.present?
         = button_to "Log out", destroy_user_session_path, method: :delete, class: ["btn-link"]

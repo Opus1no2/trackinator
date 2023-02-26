@@ -3,22 +3,3 @@
     background: #242729;
   }
 }
-
-.new-list-btn {
-  border-top: solid 1px var(--secondary);
-  margin-top: 5px;
-
-  button {
-    font-weight: 200;
-    margin-top: 5px;
-    background: transparent;
-    border: none;
-    padding: 8px;
-    width: 100%;
-    text-align: left;
-  }
-
-  button:hover {
-    background: #363636;
-  }
-}

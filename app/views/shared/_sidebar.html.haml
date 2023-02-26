@@ -5,5 +5,5 @@
         = list[:list].title
       .flex
         = list[:item_count]
-  .sticky.new-list-btn
-    %button.btn-link.rounded.hover:bg-hover-dark{ "data-controller" => "modal", "data-action" => "click->modal#toggle" } New List
+  .sticky.border-t.border-t-secondary
+    %button.btn-link.mt-2.w-full.text-left.p-2.rounded.hover:bg-hover-dark{ "data-controller" => "modal", "data-action" => "click->modal#toggle" } New List
