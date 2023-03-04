@@ -39,8 +39,7 @@ ENV RAILS_ENV="${RAILS_ENV}"
 
 COPY . .
 
-RUN SECRET_KEY_BASE=dummy bundle exec rake assets:precompile
-
+RUN RAILS_ENV=production SECRET_KEY_BASE=dummy bundle exec rake assets:precompile
 ENTRYPOINT ["/app/bin/docker-entrypoint-web"]
 
 EXPOSE 3000
