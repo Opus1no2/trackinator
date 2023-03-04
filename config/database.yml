@@ -36,4 +36,4 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV.fetch("RDS_DB_NAME") { "app" } %>_production
+  database: <%= ENV.fetch("RDS_DB_NAME") %>
