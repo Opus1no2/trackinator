@@ -35,4 +35,4 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV.fetch("RDS_DB_NAME") %>
+  database: <%= ENV.fetch("RDS_DB_NAME") { "ebdb" } %>
