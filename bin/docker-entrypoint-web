@@ -2,6 +2,7 @@
 
 set -e
 
+SECRET_KEY_BASE=dummy bundle exec rake assets:precompile
 rm -f /myapp/tmp/pids/server.pid
 bundle exec rake db:migrate
 
