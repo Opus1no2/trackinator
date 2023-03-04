@@ -13,8 +13,8 @@
   height: 4.5rem;
   line-height: 4.5rem;
   padding: 0 2rem;
+}
 
-  &:visited {
-    color: white;
-  }
+.sign-up-btn:visited {
+  color: white;
 }

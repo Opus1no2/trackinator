@@ -1,5 +1,5 @@
 # Use a slim version of the official Ruby 3.1.2 image as a parent image
-FROM ruby:3.1.2-slim
+FROM ruby:3.1.2-slim as app
 
 # Set the working directory to /app
 WORKDIR /app
@@ -13,11 +13,10 @@ RUN apt-get update && apt-get install -y \
   postgresql-client \
   git
 
-# Copy the Gemfile and Gemfile.lock to the working directory
+FROM app as development
 COPY Gemfile Gemfile.lock ./
 
-# Install dependencies
-RUN bundle install --jobs 20 --retry 5
+RUN bundle install
 
 # Copy the rest of the application code to the working directory
 COPY . .
@@ -25,8 +24,25 @@ COPY . .
 # Expose port 3000 for the Rails server
 EXPOSE 3000
 
-# ENV RAILS_SERVE_STATIC_FILES=true
-
-# Start the Rails server
-# CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
 CMD ["bin/dev"]
+
+FROM app as production
+
+# Copy the Gemfile and Gemfile.lock to the working directory
+COPY Gemfile Gemfile.lock ./
+
+RUN bundle config without development test
+RUN bundle install
+
+ARG RAILS_ENV="production"
+ENV RAILS_ENV="${RAILS_ENV}"
+
+COPY . .
+
+RUN SECRET_KEY_BASE=dummy bundle exec rake assets:precompile
+
+ENTRYPOINT ["/app/bin/docker-entrypoint-web"]
+
+EXPOSE 3000
+
+CMD ["rails", "s", "-b", "0.0.0.0"]

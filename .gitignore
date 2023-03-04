@@ -4,6 +4,7 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+.env
 # Ignore bundler config.
 /.bundle
 
@@ -32,3 +33,8 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

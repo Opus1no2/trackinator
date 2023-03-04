@@ -7,7 +7,6 @@
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
-
 .modal {
   position: fixed;
   top: 40%;
@@ -17,7 +16,6 @@
   z-index: 2;
   transition: all 0.3s ease-in-out;
 }
-
 #open-modal {
   display: inline-block;
   padding: 10px 20px;
@@ -27,13 +25,11 @@
   border-radius: 5px;
   cursor: pointer;
 }
-
 .close-modal {
   cursor: pointer;
   float: right;
-
-  &:after {
-    display: inline-block;
-    content: "\00d7";
-  }
+}
+.close-modal:after {
+  display: inline-block;
+  content: "\00d7";
 }

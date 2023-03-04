@@ -1,25 +1,26 @@
 version: '3.9'
 services:
   web:
-    build: .
+    build:
+      context: .
+      target: ${RAILS_ENV:-production}
     volumes:
       - .:/app
     ports:
-      - "3000:3000"
+      - "80:3000"
     environment:
       RAILS_SERVE_STATIC_FILES: 'true'
     depends_on:
       - track_db
-    command: bash -c "rm -f tmp/pids/server.pid && bin/dev"
     tty: true
     stdin_open: true
+    env_file:
+      - .env
   track_db:
     image: postgres:14
     ports:
       - 5432:5432
     volumes:
       - db-data:/var/lib/postgresql/data
-    environment:
-      POSTGRES_PASSWORD: password
 volumes:
   db-data:
