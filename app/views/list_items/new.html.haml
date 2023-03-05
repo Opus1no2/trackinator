@@ -1,0 +1,9 @@
+.header-highlight
+.container.mx-auto.px-4.flex.flex-col.h-full
+  .flex.justify-end.my-4
+    .flex.justify-center.items-center.text.xl.rounded-full.border.border-white.w-5.h-5
+      = link_to 'X', :back
+  .flex.flex-col.flex-1.flex-auto
+    = form_with url: list_list_items_path do |f|
+      = f.text_area :description, placeholder: "Your item description", class: "w-full bg-dark focus:ring-secondary-dark focus:border-lighter-dark"
+      = f.submit "Create", class: "flex justify-center w-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded py-2"
