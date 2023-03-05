@@ -22,6 +22,8 @@ module.exports = {
         'hover-dark': '#363636',
         'light-blue': '#90c1ea',
         'light-green': '#55c579',
+        'list-item-dark': '#29292f',
+        'list-item-light': '#2c313f'
       },
     },
   },

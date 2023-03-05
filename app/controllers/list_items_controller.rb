@@ -19,9 +19,13 @@ class ListItemsController < ApplicationController
     redirect_to list_list_items_path
   end
 
+  def show
+    @list_item = ListItem.find(params[:id])
+  end
+
   def destroy
-    list_view.list_itmes.find(params[:id]).destroy
-    redirect_to todo_list_todos_path
+    list_view.list_items.find(params[:id]).destroy
+    redirect_to list_list_items_path
   end
 
   def list_view

@@ -18,7 +18,7 @@ class ListUpdateService
   end
 
   def completed_at
-    params[:completed_at].present? ? DateTime.current : nil
+    params[:completed_at] == 'true' ? DateTime.current : nil
   end
 
   def description?
