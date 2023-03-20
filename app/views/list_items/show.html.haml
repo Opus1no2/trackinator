@@ -8,14 +8,16 @@
       .flex.mb-4
         = f.text_area :description, placeholder: @list_item.description, class: "w-full bg-dark focus:ring-secondary-dark focus:border-lighter-dark"
       .flex.mb-4
-        = f.submit "Update Description", class: "w-full py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer bg-gradient-to-r from-cyan-500 to-blue-500"
-    .flex.justify-around
-      = form_with url: list_list_item_path(id: @list_item.id), method: :put, class: "w-2/3 mr-1" do |f|
-        = f.hidden_field :completed_at, value: false
-        = f.submit "In Progress", class: ["rounded-md w-full border cursor-pointer", @list_item.completed_at.present? ? "" : "bg-green-500"]
-      = form_with url: list_list_item_path(id: @list_item.id), method: :put, class: "w-2/3 ml-1" do |f|
-        = f.hidden_field :completed_at, value: true
-        = f.submit "Complete", class: ["rounded-md w-full border cursor-pointer", @list_item.completed_at.present? ? "bg-green-500" : ""]
+        = f.submit "Update Description", class: "w-full py-2 px-4 shadow-sm shadow-black rounded focus:outline-none focus:shadow-outline cursor-pointer bg-gradient-to-r from-cyan-500 to-blue-500"
+    = form_with url: list_list_item_path(id: @list_item.id), method: :put, class: "" do |f|
+      = f.hidden_field :completed_at, value: false
+      = f.submit "In Progress", class: ["py-2 rounded-md border w-full shadow-sm shadow-black cursor-pointer", @list_item.completed_at.present? ? "" : "bg-green-500"]
+    = form_with url: list_list_item_path(id: @list_item.id), method: :put, class: "mt-10" do |f|
+      = f.hidden_field :completed_at, value: true
+      - if @list_item.completed_at.present?
+        = f.submit "Completed", class: ["font-bold rounded-full w-full shadow-md shadow-black cursor-pointer py-10 bg-green-500"]
+      - else
+        = f.submit "Complete!", class: ["font-bold rounded-full w-full shadow-md shadow-black cursor-pointer py-10 bg-lighter-dark"]
   = form_with url: list_list_item_path(id: @list_item.id), method: :delete, class: "mb-5" do |f|
     = f.submit "Delete", class: "bg-red-400 text-center w-full py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer"
 
