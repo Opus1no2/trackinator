@@ -3,8 +3,10 @@
   = render partial:  "shared/sidebar", locals: { lists: @view.lists }
   .container.px-2.mx-auto.flex.flex-col{ class: "w-full md:w-2/3", "data-controller" => "item", "data-action" => "resize@window->item#layout" }
     = render partial: "header-nav", locals: { settings: @view.list_settings }
-    = render "finished_state"
     .flex.flex-col{ "data-id" => "list-items-cont" }
-      = render partial: "list_items", collection: @view.list_items, as: :item
+      - if @view.list_items.present?
+        = render partial: "list_items", collection: @view.list_items, as: :item
+      - else
+        = render partial: "finished_state"
     = render "footer"
 = render "shared/new_modal"
