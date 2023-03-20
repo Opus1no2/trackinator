@@ -1,4 +1,4 @@
-%nav.side-bar.px-4.pt-11.bg-lighter-dark.screen.w-64.hidden.md:flex.flex-col.sticky.top-0.bottom-0
+%nav.side-bar.px-4.pt-11.bg-lighter-dark.screen.w-64.hidden.md:flex.flex-col.sticky.top-0.bottom-0.shadow-md.shadow-dark-shadow
   - lists.each do |list|
     = link_to list_list_items_path(list[:list].id), class: list_classes(list[:list].id, params[:list_id]) do
       .flex

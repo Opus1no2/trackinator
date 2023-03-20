@@ -1,4 +1,4 @@
-.list-item-row.flex.items-center.justify-between.w-full.mb-2.px-4.py-2.rounded-md
+.list-item-row.flex.items-center.justify-between.w-full.mb-2.px-4.py-2.rounded-md.shadow-md
   = link_to description(item.description), list_list_item_path(params[:list_id], item.id), class: "flex md:hidden w-full"
   - if item.completed_at?
     .flex.w-4.h-4.bg-green-500.rounded-full{ class: "md:hidden"}
