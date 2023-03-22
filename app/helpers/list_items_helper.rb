@@ -2,6 +2,6 @@
 
 module ListItemsHelper
   def description(desc)
-    desc.present? ? desc : "nothing here..."
+    desc.present? ? desc : 'nothing here...'
   end
 end

@@ -7,8 +7,7 @@ class ListItemsController < ApplicationController
     @view = list_view
   end
 
-  def new
-  end
+  def new; end
 
   def create
     list_view.list_items.create!(description: params[:description])
