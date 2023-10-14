@@ -1,9 +1,6 @@
-.list-item-row.flex.items-center.justify-between.w-full.mb-2.px-4.py-2.rounded-md.shadow-md
-  = link_to description(item.description), list_list_item_path(params[:list_id], item.id), class: "flex md:hidden w-full"
-  - if item.completed_at?
-    .flex.w-4.h-4.bg-green-500.rounded-full{ class: "md:hidden"}
-  = form_with url: list_list_item_path(id: item.id), method: :put, html: { class: ["w-full", "mb-0", "hidden", "md:block"] } do |f|
+.flex.items-center.justify-between.w-full
+  = form_with url: list_list_item_path(id: item.id), method: :put, html: { class: ["w-full", "mb-0"] } do |f|
     = f.text_field :description, { value: item.description, class: "border-none w-full bg-transparent" }
-  = form_with url: list_list_item_path(id: item.id), method: :put, html: { class: ["complete-form", "hidden", "md:block"] } do |f|
-    = f.hidden_field :completed_at, value: true
-    = f.submit "", class: ["w-4 h-4 rounded-full bg-transparent border cursor-pointer", item.completed_at.present? ? "completed" : ""]
+  = form_with url: list_list_item_path(id: item.id), method: :put, html: { class: ["mr-2"]} do |f|
+    = f.hidden_field :completed_at, value: !item.completed_at.present?
+    = f.submit "", class: ["w-4 h-4 bg-transparent border cursor-pointer", item.completed_at.present? ? "completed" : ""]

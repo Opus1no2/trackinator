@@ -1,39 +1,43 @@
 .complete-form {
+  margin-left: 8px;
   height: 20px;
 }
+
 .completed {
   border: none;
   background: linear-gradient(to right, #85ca85 0%, #27ac27 100%) !important;
 }
+
 .list-item-row {
   background: linear-gradient(to right, #29292f 0%, #2c313f 100%);
 }
+
 .list-item-input {
+  display: block;
   position: fixed;
-  display: none;
   max-width: 108rem;
   background: var(--dark-bg-color);
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 .list-item-input input {
   font-weight: 200;
 }
-@media (min-width: 640px) {
-  .list-item-input {
-    display: block;
-  }
-}
+
 .list-item-input form input {
   margin: 0 !important;
 }
+
 .dropdown {
   position: relative;
   display: inline-block;
 }
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 .dropdown-btn {
   color: white;
   padding: 12px;
@@ -41,6 +45,7 @@
   border: none;
   cursor: pointer;
 }
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -50,6 +55,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   border-radius: 5px;
 }
+
 .dropdown-content button {
   height: 50px;
   font-weight: 200;
@@ -58,15 +64,18 @@
   padding: 10px 16px 10px 16px;
   text-align: left;
 }
+
 .dropdown-content button:hover {
   background: #292d2f;
 }
+
 .dropdown-content .log-out-link {
   border-top: solid 1px var(--secondary);
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   text-align: left;
 }
+
 .dropdown-content .delete-list-link {
   color: #ff6653;
   background: transparent;

@@ -5,7 +5,8 @@
     = render partial: "header-nav", locals: { settings: @view.list_settings }
     .flex.flex-col{ "data-id" => "list-items-cont" }
       - if @view.list_items.present?
-        = render partial: "list_items", collection: @view.list_items, as: :item
+        .mb-2
+          = render partial: "list_items", collection: @view.list_items, as: :item
       - else
         = render partial: "finished_state"
     = render "footer"
