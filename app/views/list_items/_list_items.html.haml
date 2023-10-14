@@ -1,6 +1,7 @@
 .flex.items-center.justify-between.w-full
-  = form_with url: list_list_item_path(id: item.id), method: :put, html: { class: ["w-full", "mb-0"] } do |f|
-    = f.text_field :description, { value: item.description, class: "border-none w-full bg-transparent" }
-  = form_with url: list_list_item_path(id: item.id), method: :put, html: { class: ["mr-2"]} do |f|
+  = form_with url: list_list_item_path(id: item.id), method: :put, html: { class: ["ml-3", "mr-2"]} do |f|
     = f.hidden_field :completed_at, value: !item.completed_at.present?
     = f.submit "", class: ["w-4 h-4 bg-transparent border cursor-pointer", item.completed_at.present? ? "completed" : ""]
+  = form_with url: list_list_item_path(id: item.id), method: :put, html: { class: ["w-full", "mb-0"] } do |f|
+    = f.text_field :description, { value: item.description, class: "border-none focus:ring-0 w-full bg-transparent" }
+  
