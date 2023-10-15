@@ -6,5 +6,7 @@
 
   - @lists.each do |list|
     = link_to list_list_items_path(list.id) do
-      .mb-2.list-item-row.rounded-md.p-2
+      .mb-2.list-item-row.p-2
         = list.title
+  = form_with model: List.new, method: :post do |f|
+    = f.text_field :title, { class: "w-full bg-transparent", placeholder: "New List" }
